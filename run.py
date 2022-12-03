@@ -85,6 +85,17 @@ def calculate_surplus_data(sales_row):
 
     return surplus_data
 
+def get_last_5_entries_sales():
+    """
+    Gathers data of last 5 entries from columns and
+    puts them in a list of lists.
+    """
+    columns = []
+    for ind in range(1, 7):
+        column = sales.col_values(ind)
+        columns.append(column[-5:])
+
+    return columns
 
 def main():
     """
@@ -99,3 +110,5 @@ def main():
 
 print("Welcome to Love Sandwiches Data Automation")
 main()
+
+sales_colummns = get_last_5_entries_sales()
